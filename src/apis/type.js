@@ -1,12 +1,5 @@
 
 import request from './request.js'
-//段落
-/**
- * 
- * @param {'easy'|'hard'} type 
- * @param {number} page
- * @param {number} limit 
- *  */
 export function getList(type,page){
   const param = {
     page,
@@ -21,7 +14,6 @@ export function getList(type,page){
     params:param
   })
 }
-//获取内容
 export function getContent(id){
   return request({
     url:'/api/passage/content',
@@ -31,12 +23,6 @@ export function getContent(id){
     }
   })
 }
-//用户模块
-/**
- * @param {string} name
- * @param {string} password
- * @param {number} id
- */
 export function checklogin(){
   return request({
     url:'/api/user/state',
@@ -80,15 +66,6 @@ export function modUser(id,name,password){
     }
   })
 }
-
-//历史记录模块
-/**
- * @param {number} passageId
- * @param {number} userId 
- * @param {number} wpm
- * @param {number} userId
- */
-//上传本次打谱记录
 export function addrecord(passageId,userId,wpm){
   return request({
     url:'/api/record',
@@ -111,7 +88,6 @@ export function getrecord(userId,page){
       }
   })
 }
-//无耻的修改记录 
 export function delrecord(recordId){
   return request({
     url:`/api/record/${recordId}`,

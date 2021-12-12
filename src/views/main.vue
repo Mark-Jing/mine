@@ -119,7 +119,6 @@ export default {
     },
     async getContent(id){
         const response =await getContent(id);
-        console.log(response);
         this.title = response.data.data.title;  
         this.model = response.data.data.content;
     },
@@ -156,8 +155,6 @@ export default {
   .letter {
     font-size: 20px;
     font-weight: 500;
-    transition-duration: 0.2s;
-    font-family: 'typeface-roboto';
   }
   .demo-paper{
     padding:3%;

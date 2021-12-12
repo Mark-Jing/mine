@@ -36,7 +36,7 @@ export default {
         if(response.data.success==true){
           sessionStorage.setItem("userId",response.data.data.id);
           sessionStorage.setItem("userName",response.data.data.name);
-          this.$toast.success("登录成功");
+          this.$toast.success("done");
           this.$router.push('/list');
         }
 },
@@ -59,11 +59,6 @@ export default {
          sessionStorage.setItem('userId',res.data.data.id);
          this.$parent.recalc =! this.$parent.recalc;
          this.$router.push("/list");
-       }else{
-         this.$toast.error(res.data.error)    
-         if(res.data.error=="已登录"){
-           this.$router.push('/list')
-         } 
        }
      }else{
        this.$toast.error(res.status)
@@ -72,25 +67,17 @@ export default {
    },
    async loginHandler(){
       if(this.GLOBAL.isEmpty(this.userName)){
-         this.$toast.warning("用户名不能为空");
+         this.$toast.warning("username can't be empty");
           return;
        }
        if(this.GLOBAL.isEmpty(this.password)){
-         this.$toast.warning("密码不能为空");
+         this.$toast.warning("password can't be empty");
          return;
        }
        const response = await login(this.userName,this.password);
        this.resHandler(response,"登录")
    },
    async registryHandler(){
-       if(this.GLOBAL.isEmpty(this.regName)){
-         this.$toast.warning("用户名不能为空");
-          return;
-       }
-       if(this.GLOBAL.isEmpty(this.regPassword)){
-         this.$toast.warning("密码不能为空");
-         return;
-       }
        const response = await registry(this.regName,this.regPassword);
        this.resHandler(response,"注册")
    }

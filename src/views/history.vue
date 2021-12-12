@@ -2,18 +2,16 @@
   <el-container style="height:100%;">
     <el-table :data="list" style="width: 100%"
     :loading="true"
-    :sort.sync="sort" 
      @sort-change="handleSortChange" 
     >
-    <template slot="expand" slot-scope="prop">
-          
+    <template slot="expand" >
           
           <el-row>
     <el-col :span="12"><div class="grid-content bg-purple"><span>PASSAGEID:{{prop.row.passageId}}</span></div></el-col>
     <el-col :span="12"><div class="grid-content bg-purple-light"><el-button @click="delrecord(prop.row.id)" flat slot="right">清除</el-button></div></el-col>
   </el-row>
       </template>
-      <template slot-scope="scope"> 
+      <template> 
         <td class="is-center">{{scope.row.title}}</td>
         <td class="is-center">{{scope.row.wpm}}</td>
       </template>

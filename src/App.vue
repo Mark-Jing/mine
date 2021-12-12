@@ -31,7 +31,7 @@
   <el-button type="text" @click="dialogVisible = true"
     >modify identity</el-button
   >
-  <el-dialog title="更改信息?" v-model="dialogVisible" width="400" max-width="40%" :esc-press-close="false" :overlay-close="false" :open.sync="openModUser">
+  <el-dialog title="更改信息?" v-model="dialogVisible" width="400" max-width="40%" :esc-press-close="false" :overlay-close="false" >
     <el-input v-model="newname" placeholder="Please input" /><br/>
     <el-input v-model="newPwd" placeholder="Please input password" show-password />
     <el-button  flat color="primary" @click="openModUser=false">CANCEL</el-button>

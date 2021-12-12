@@ -4,7 +4,7 @@
           
           <div v-if="registry==false" class="flexBox" align-items="center" direction="column" display="flex">
             <el-header z-depth=0 style="width: 100%;" title="登录">
-              <el-button flat slot="right" @click="registry=!registry">注册</el-button>
+              <el-button flat  @click="registry=!registry">注册</el-button>
             </el-header>
              <el-input v-model="username" placeholder="Please input" />
             <el-input v-model="password" placeholder="Please input password" show-password />
@@ -15,7 +15,7 @@
 
           <div v-else class="flexBox"  align-items="center" direction="column" display="flex">
             <el-header z-depth=0 style="width: 100%;" title="注册">
-              <el-button flat slot="right" @click="registry=!registry">登录</el-button>
+              <el-button flat  @click="registry=!registry">登录</el-button>
             </el-header>
               <el-input v-model="username" placeholder="Please input" />
             <el-input v-model="password" placeholder="Please input password" show-password />

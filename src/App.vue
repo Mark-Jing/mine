@@ -117,9 +117,6 @@ export default {
         .then(() => {
           done()
         })
-        .catch(() => {
-          // catch error
-        })
     }
     return {
       dialogVisible,

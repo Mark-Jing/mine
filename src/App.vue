@@ -2,7 +2,7 @@
   <div id="app">
   <!-- <el-container> -->
   <el-header style="width: 100%;" color="gray">
-  <el-button v-if="this.$route.name!='login'" icon @click="open = !open" slot="left">
+  <el-button v-if="this.$route.name!='login'" icon @click="open = !open" >
     =
   </el-button>
   Tenzor-Typer

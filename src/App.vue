@@ -1,27 +1,27 @@
 <template>
   <div id="app">
-  <el-container>
+  <!-- <el-container> -->
   <el-header style="width: 100%;" color="gray">
   <el-button v-if="this.$route.name!='login'" icon @click="open = !open" slot="left">
     =
   </el-button>
   Tenzor-Typer
   
-  <el-button flat slot="right"
+  <el-button flat 
   >
           _{{userName}}
   </el-button>
-  <el-button flat slot="right" v-if="this.$route.name!='login'"
+  <el-button flat  v-if="this.$route.name!='login'"
   @click="openModUser =true">
         更改信息
   </el-button>
-  <el-button flat slot="right"
+  <el-button flat 
   @click="logoutHandler">
         注销
   </el-button>
   </el-header>
 
-  <el-drawer :open.sync="open" :docked="docked" :right="false">
+  <el-drawer  :docked="docked" :right="false">
     <ul>
      <li><button @click="jumpHandler('list')">Type列表</button></li> 
       <li><button @click="jumpHandler('history')">个人Info</button></li>
@@ -34,12 +34,12 @@
   <el-dialog title="更改信息?" v-model="dialogVisible" width="400" max-width="40%" :esc-press-close="false" :overlay-close="false" :open.sync="openModUser">
     <el-input v-model="newname" placeholder="Please input" /><br/>
     <el-input v-model="newPwd" placeholder="Please input password" show-password />
-    <el-button  slot="actions" flat color="primary" @click="openModUser=false">CANCEL</el-button>
-    <el-button  slot="actions" flat color="primary" @click="modUser">SUBMIT</el-button>
+    <el-button  flat color="primary" @click="openModUser=false">CANCEL</el-button>
+    <el-button flat color="primary" @click="modUser">SUBMIT</el-button>
   </el-dialog>
   <router-view/>
   </div>
- </el-container>
+ <!-- </el-container> -->
 </template>
 
 <script>
